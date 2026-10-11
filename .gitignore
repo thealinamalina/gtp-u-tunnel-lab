@@ -1,0 +1,7 @@
+.venv/
+.vscode/
+
+*.o
+tun
+
+ping*.log
