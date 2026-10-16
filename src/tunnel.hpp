@@ -5,6 +5,7 @@
 #include <netinet/in.h>
 #include <arpa/inet.h>
 #include <cstdint>
+#include <array>
 
 struct Ue {
     struct in_addr ipv4_addr;
@@ -12,8 +13,14 @@ struct Ue {
     std::uint32_t downlink_teid;
 };
 
-const Ue* find_ue_by_ip(const struct in_addr& ip4);
-const Ue* find_ue_by_ul_teid(std::uint32_t ul_teid);
-bool init_ue_table();
+class TunnelTable {
+public:
+    TunnelTable();
+    const Ue* find_ue_by_ip(const struct in_addr& ip4) const;
+    const Ue* find_ue_by_ul_teid(std::uint32_t ul_teid) const;
+
+private:
+    std::array<Ue, 4> ues_;
+};
 
 #endif

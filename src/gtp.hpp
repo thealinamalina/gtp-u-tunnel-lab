@@ -17,7 +17,7 @@ struct Gtpu_header
 struct Gtpu_view
 {
     std::uint32_t teid;
-    const char* payload;
+    const char* payload; //std::span
     std::size_t payload_length;
 };
 

@@ -7,6 +7,6 @@
 
 
 bool build_arp_reply(const struct ethhdr& ethernet, const struct ether_arp& arp,
-                    const char* upf_mac, char* buffer, std::size_t buffer_capacity, std::size_t& reply_length);
+                    const unsigned char* upf_mac, char* buffer, std::size_t buffer_capacity, std::size_t& reply_length);
 
 #endif
